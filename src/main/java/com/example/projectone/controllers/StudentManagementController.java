@@ -35,9 +35,9 @@ public class StudentManagementController {
     }
 
     private Student getById(Integer id) {
-        for (int i = 0; i < studentList.size(); i++) {
-            if (studentList.get(i).getId().equals(id))
-                return studentList.get(i);
+        for (Student student : studentList) {
+            if (student.getId().equals(id))
+                return student;
         }
         throw new StudentNotFoundException("Student with ID=" + id + " does not exist");
     }
